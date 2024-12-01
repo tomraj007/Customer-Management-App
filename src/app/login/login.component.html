@@ -32,11 +32,11 @@
                   />
                   <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
                     <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
-                    <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</small>
+                    <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 4 characters long</small>
                   </div>
                 </div>
             
-                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+                <button type="submit" class="btn btn-primary" >Login</button>
             
                 <div *ngIf="errorMessage" class="alert alert-danger mt-2">
                   {{ errorMessage }}

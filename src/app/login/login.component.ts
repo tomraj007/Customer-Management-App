@@ -38,7 +38,7 @@ export class LoginComponent {
   // Function to handle login logic
   login() {
     if (this.loginForm.invalid) {
-      this.errorMessage = 'Form is invalid';
+      this.errorMessage = 'Invalid username or password';
       return;
     }
 
