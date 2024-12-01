@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JsonPlaceholderService } from '../json-placeholder.service';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -18,6 +18,7 @@ export class CustomerDetailsComponent {
   errorMessage: string = '';
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private apiService: JsonPlaceholderService
   ) {}
 
@@ -41,5 +42,9 @@ export class CustomerDetailsComponent {
         console.error(err);
       },
     });
+  }
+
+  goBack(){
+    this.router.navigate(['customer-landing']);
   }
 }

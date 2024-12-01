@@ -113,4 +113,7 @@ export class CustomerFormComponent implements OnInit {
       }
     });
   }
+  goBack(){
+    this.router.navigate(['customer-landing']);
+  }
 }

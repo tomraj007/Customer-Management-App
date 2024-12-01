@@ -1,4 +1,10 @@
 <div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 4px;">
+    <!-- Back Button -->
+    <button class="btn btn-primary small" (click)="goBack()">
+      <i class="bi bi-arrow-left"></i> Back
+    </button>
+  </div>
     <h2 class="text-primary">Customer Details</h2>
     <div *ngIf="errorMessage" class="alert alert-danger mt-3">
       {{ errorMessage }}

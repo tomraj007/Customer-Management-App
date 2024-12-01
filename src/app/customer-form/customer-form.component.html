@@ -1,4 +1,10 @@
 <div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 4px;">
+    <!-- Back Button -->
+    <button class="btn btn-primary small" (click)="goBack()">
+      <i class="bi bi-arrow-left"></i> Back
+    </button>
+  </div>
     <div class="card shadow-sm">
       <div class="card-header bg-primary text-white">
         <h3 class="mb-0">{{ isEditMode ? 'Edit Customer' : 'Add New Customer' }}</h3>
