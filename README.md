@@ -2,9 +2,35 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
+# System Dependency
+Make sure your system have these version
+
+`Angular CLI: 17.3.11`
+`Node: 20.11.0`
+`Package Manager: npm 10.2.4`
+
+# To Run In your local syatem 
+
+Pull using any git hub or git bash from git.
+and run cmd `npm install`
+then run cmd `ng serve` 
+
+## Check the Customer App
+
+after running ng serve and taking default port `http://localhost:4200/`
+login page appears :
+`Username`: `admin`
+`password`: `admin`
+
+You will enter Customer List Table:
+on click on the table row you will go to corresponding user details page 
+similarly you can add ,edit and delete customers.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+
 
 ## Code scaffolding
 
