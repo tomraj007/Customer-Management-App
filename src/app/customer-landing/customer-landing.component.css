@@ -1,0 +1,114 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+header {
+    background-color: #5075ca;
+}
+.customer-header {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 169px;
+    background-color: #5075ca;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 850px!important;
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 80px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu li:hover {
+    color: #03020a;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    background-color: #f4f7fc;
+   
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.header-title h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.user-info span {
+    font-size: large;
+    font-style: normal;
+    color: #f4f7fc;
+}
+
+.user-info span a {
+    font-size: large;
+    font-style: normal;
+    color: #f4f7fc;
+    text-decoration: none; /* Removes underline for links */
+}
+
+.user-info span a:hover {
+    color: #03020a;
+}
+
+/* Details Section */
+.details {
+
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Company Section */
+.company-section {
+    display: flex;
+    gap: 15px;
+}
+
+

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="left-section">
+        <img src="assets/image/background.webp" alt="Background Image" class="background-image">
+    </div>
+    <div class="right-section">
+        <div class="login-form">
+            <img src="assets/image/cutomericon.webp" alt="Teknowmics Logo" class="logo">
+            <h2>Customer App</h2>
+            <p>Simplifying Customer Management...</p>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div>
+                  <label for="username">Username:</label>
+                  <input
+                    type="text"
+                    id="username"
+                    formControlName="username"
+                    class="form-control"
+                  />
+                  <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+                    <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</small>
+                    <small *ngIf="loginForm.get('username')?.errors?.['minlength']">Username must be at least 4 characters long</small>
+                  </div>
+                </div>
+            
+                <div>
+                  <label for="password">Password:</label>
+                  <input
+                    type="password"
+                    id="password"
+                    formControlName="password"
+                    class="form-control"
+                  />
+                  <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                    <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+                    <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</small>
+                  </div>
+                </div>
+            
+                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+            
+                <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+                  {{ errorMessage }}
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

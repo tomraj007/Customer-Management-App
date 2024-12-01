@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h2 class="text-primary">Customer Details</h2>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="customer" class="card mt-3">
+      <div class="card-header">
+        <h3>{{ customer.name }}</h3>
+        <p class="text-muted">Username: {{ customer.username }}</p>
+      </div>
+      <div class="card-body">
+        <h5>Contact Information</h5>
+        <ul class="list-group mb-3">
+          <li class="list-group-item"><strong>Email:</strong> {{ customer.email }}</li>
+          <li class="list-group-item"><strong>Phone:</strong> {{ customer.phone }}</li>
+          <li class="list-group-item"><strong>Website:</strong> {{ customer.website }}</li>
+        </ul>
+  
+        <h5>Address</h5>
+        <ul class="list-group mb-3">
+          <li class="list-group-item"><strong>Street:</strong> {{ customer.address.street }}</li>
+          <li class="list-group-item"><strong>Suite:</strong> {{ customer.address.suite }}</li>
+          <li class="list-group-item"><strong>City:</strong> {{ customer.address.city }}</li>
+          <li class="list-group-item"><strong>Zipcode:</strong> {{ customer.address.zipcode }}</li>
+        </ul>
+  
+        <h5>Company</h5>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Name:</strong> {{ customer.company.name }}</li>
+          <li class="list-group-item">
+            <strong>Catch Phrase:</strong> {{ customer.company.catchPhrase }}
+          </li>
+          <li class="list-group-item"><strong>BS:</strong> {{ customer.company.bs }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

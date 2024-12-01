@@ -1,0 +1,38 @@
+
+<div class="customer-header">
+
+  <div class="sidebar">
+      <div class="logo-section">
+          <img src="assets/image/cutomericon.webp" alt="Customer App" class="logo">
+          <h1>Customer App</h1>
+      </div>
+      <div>
+      <ul class="menu">
+          <li><a routerLink="/customer-landing/customer-list" style="color: aliceblue;">Customer List</a></li>
+      </ul>
+  </div>
+  </div>
+  <div class="main-content">
+      <header>
+          <div class="user-info">
+
+              <span>User Name :admin</span>
+              <span>
+                <a routerLink="/login" aria-label="Logout">
+                  <!-- <img src="assets/image/logout.webp" title="Logout" alt="Logout" width="50" height="50"> -->
+                  <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+            </span>
+              
+          </div>
+      </header>
+      <div class="details">
+        <router-outlet></router-outlet>
+        
+      </div>
+  </div>
+
+</div>
+   
+ 
+  
