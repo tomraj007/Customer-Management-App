@@ -70,6 +70,10 @@ export class CustomerFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.customerForm.invalid) {
+      this.markFormGroupTouched(this.customerForm); // Ensure all controls are marked
+      return;
+    }
     if (this.customerForm.valid) {
       if (this.isEditMode) {
         console.log('Edit customer:', this.customerForm.value);
@@ -99,5 +103,14 @@ export class CustomerFormComponent implements OnInit {
         });
       }
     }
+  }
+  private markFormGroupTouched(formGroup: FormGroup): void {
+    Object.values(formGroup.controls).forEach((control) => {
+      if (control instanceof FormGroup) {
+        this.markFormGroupTouched(control); // Recursive call for nested FormGroups
+      } else {
+        control.markAsTouched(); // Mark control as touched
+      }
+    });
   }
 }

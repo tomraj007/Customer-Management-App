@@ -54,7 +54,11 @@
   
             <div class="col-md-6 mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input id="phone" type="text" class="form-control" formControlName="phone" />
+              <input id="phone" type="text" class="form-control" formControlName="phone"
+              [class.is-invalid]="customerForm.get('phone')?.invalid && customerForm.get('phone')?.touched" />
+              <div class="invalid-feedback" *ngIf="customerForm.get('phone')?.invalid && customerForm.get('phone')?.touched">
+                Phone no is required.
+              </div>
             </div>
           </div>
   
@@ -64,7 +68,11 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="street" class="form-label">Street</label>
-                <input id="street" type="text" class="form-control" formControlName="street" />
+                <input id="street" type="text" class="form-control" formControlName="street" 
+                [class.is-invalid]="customerForm.get('address.street')?.invalid && customerForm.get('address.street')?.touched" />
+                <div class="invalid-feedback" *ngIf="customerForm.get('address.street')?.invalid && customerForm.get('address.street')?.touched">
+                  Street is required.
+                </div>
               </div>
   
               <div class="col-md-6 mb-3">
@@ -76,12 +84,20 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="city" class="form-label">City</label>
-                <input id="city" type="text" class="form-control" formControlName="city" />
+                <input id="city" type="text" class="form-control" formControlName="city" 
+                [class.is-invalid]="customerForm.get('address.city')?.invalid && customerForm.get('address.city')?.touched" />
+                <div class="invalid-feedback" *ngIf="customerForm.get('address.city')?.invalid && customerForm.get('address.city')?.touched">
+                  City is required.
+                </div>
               </div>
   
               <div class="col-md-6 mb-3">
                 <label for="zipcode" class="form-label">Zipcode</label>
-                <input id="zipcode" type="text" class="form-control" formControlName="zipcode" />
+                <input id="zipcode" type="text" class="form-control" formControlName="zipcode"
+                [class.is-invalid]="customerForm.get('address.zipcode')?.invalid && customerForm.get('address.zipcode')?.touched"/>
+                <div class="invalid-feedback" *ngIf="customerForm.get('address.zipcode')?.invalid && customerForm.get('address.zipcode')?.touched">
+                  zipcode is required.
+                </div>
               </div>
             </div>
           </div>
@@ -92,12 +108,16 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="companyName" class="form-label">Company Name</label>
-                <input id="companyName" type="text" class="form-control" formControlName="name" />
+                <input id="companyName" type="text" class="form-control" formControlName="name"
+                [class.is-invalid]="customerForm.get('company.name')?.invalid && customerForm.get('company.name')?.touched"/>
+                <div class="invalid-feedback" *ngIf="customerForm.get('company.name')?.invalid && customerForm.get('company.name')?.touched">
+                  Company Name is required.
+                </div>
               </div>
             </div>
           </div>
   
-          <!-- Submit Button -->
+          <!-- Submit Button --> 
           <div class="mt-4">
             <button type="submit" class="btn btn-primary btn-lg w-100">
               {{ isEditMode ? 'Save Changes' : 'Add Customer' }}
