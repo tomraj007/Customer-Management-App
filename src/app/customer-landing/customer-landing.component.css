@@ -43,14 +43,14 @@ h1 {
     margin: 0;
 }
 
-.menu li {
+.menu li  {
     margin: 15px 0;
     cursor: pointer;
     font-size: 18px;
     transition: color 0.3s;
 }
 
-.menu li:hover {
+.menu li :hover {
     color: #03020a;
 }
 

@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+// ... existing imports ...
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private authState = new BehaviorSubject<boolean>(false);
+  authStateChanged = this.authState.asObservable();
   private isAuthenticated = false;
 
   constructor(private http: HttpClient) {}
@@ -30,12 +33,14 @@ export class AuthService {
         }
       })
     );
+    this.authState.next(true);
   }
 
   // Logout function to clear authentication
   logout(): void {
     this.isAuthenticated = false;
     localStorage.removeItem('auth');
+    this.authState.next(false);
   }
 
   // Function to check if the user is authenticated
